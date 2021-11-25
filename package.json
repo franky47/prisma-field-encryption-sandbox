@@ -5,8 +5,8 @@
     "dev": "ts-node ./script.ts"
   },
   "dependencies": {
-    "@47ng/cloak": "^1.0.1",
-    "@prisma/client": "3.5.0"
+    "@prisma/client": "3.5.0",
+    "prisma-field-encryption": "^1.0.0-beta.2"
   },
   "devDependencies": {
     "@types/node": "16.11.9",
