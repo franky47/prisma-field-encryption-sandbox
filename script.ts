@@ -5,11 +5,6 @@ const prisma = new PrismaClient()
 
 prisma.$use(
   fieldEncryptionMiddleware({
-    fields: {
-      // List what you want to encrypt as "{Model}.{field}": true
-      'Post.content': true,
-      'User.name': true,
-    },
     // Generate keys: https://cloak.47ng.com
     encryptionKey: 'k1.aesgcm256.OsqVmAOZBB_WW3073q1wU4ag0ap0ETYAYMh041RuxuI=',
   })
@@ -66,6 +61,27 @@ async function main() {
     },
   })
 
+  const assignmentPre = await prisma.post.create({
+    data: {
+      author: {
+        connect: {
+          email: underCoverSpy?.email,
+        },
+      },
+      title: 'Your mission if you choose to accept it...',
+      content: 'This encrypted field will self-destruct in the next operation',
+    },
+  })
+
+  const assignmentPost = await prisma.post.update({
+    where: {
+      id: assignmentPre.id,
+    },
+    data: {
+      content: null,
+    },
+  })
+
   const userUpdate = await prisma.user.update({
     where: { email: USER_EMAIL },
     data: {
@@ -107,6 +123,8 @@ async function main() {
       superSecretSpy,
       underCoverSpy,
       report,
+      assignmentPre,
+      assignmentPost,
       userUpdate,
       usersAndTheirPosts,
     },

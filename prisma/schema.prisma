@@ -10,7 +10,7 @@ generator client {
 model Post {
   id        Int     @id @default(autoincrement())
   title     String
-  content   String?
+  content   String? /// @encrypted <- annotate fields to encrypt (must be a String)
   published Boolean @default(false)
   author    User?   @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   authorId  Int?
@@ -19,6 +19,6 @@ model Post {
 model User {
   id    Int     @id @default(autoincrement())
   email String  @unique
-  name  String?
+  name  String? /// @encrypted
   posts Post[]
 }
