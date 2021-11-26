@@ -11,7 +11,7 @@ async function main() {
   //
   // Caveats & Limitations: you cannot filter on encrypted fields, eg:
   // prisma.user.findUnique({ where: { name: 'Super secret' }}) won't work.
-  // Also, direct SQL operations with $execute and $raw are not supported.
+  // Also, raw database access with $executeRaw and $queryRaw is not supported.
 
   const USER_EMAIL = 'secret.spy@cia.gov'
 
