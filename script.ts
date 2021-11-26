@@ -3,12 +3,7 @@ import { fieldEncryptionMiddleware } from 'prisma-field-encryption'
 
 const prisma = new PrismaClient()
 
-prisma.$use(
-  fieldEncryptionMiddleware({
-    // Generate keys: https://cloak.47ng.com
-    encryptionKey: 'k1.aesgcm256.OsqVmAOZBB_WW3073q1wU4ag0ap0ETYAYMh041RuxuI=',
-  })
-)
+prisma.$use(fieldEncryptionMiddleware())
 
 async function main() {
   // Play with the Prisma API here, and report back:
