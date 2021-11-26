@@ -170,10 +170,10 @@ object-path@^0.11.8:
   resolved "https://registry.yarnpkg.com/object-path/-/object-path-0.11.8.tgz#ed002c02bbdd0070b78a27455e8ae01fc14d4742"
   integrity sha512-YJjNZrlXJFM42wTBn6zgOJVar9KFJvzx6sTWDte8sWZF//cnjl0BxHNpfZx+ZffXX63A9q0b1zsFiBX4g4X5KA==
 
-prisma-field-encryption@^1.0.0-beta.3:
-  version "1.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/prisma-field-encryption/-/prisma-field-encryption-1.0.0-beta.3.tgz#5f91720cb21e688c860683ed22a141bbc7256c1c"
-  integrity sha512-HPwX+KOat8O1uSDfpZHh71CrctW6lZx1Wc1+BPsFD2fSp0K3ab/GpoV7foaE0zwkOwiNeDfLcTJT+XOoqbnRaw==
+prisma-field-encryption@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/prisma-field-encryption/-/prisma-field-encryption-1.0.0.tgz#a220139ce7bfe79b97ef3021251a81d51fdb8b4e"
+  integrity sha512-TMWX7Sgg5lccQ3E0O+cXxazKAnSfiY9bj7LA+GUEWEHrbHeZBlYQiBO0tgU/cUtFrEaX3mwxJWjCcGlttty+8A==
   dependencies:
     "@47ng/cloak" "^1.1.0-beta.2"
     object-path "^0.11.8"
