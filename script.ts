@@ -1,9 +1,7 @@
 import { PrismaClient } from '@prisma/client'
-import { fieldEncryptionMiddleware } from 'prisma-field-encryption'
+import { fieldEncryptionExtension } from 'prisma-field-encryption'
 
-const prisma = new PrismaClient()
-
-prisma.$use(fieldEncryptionMiddleware())
+const prisma = new PrismaClient().$extends(fieldEncryptionExtension())
 
 async function main() {
   // Play with the Prisma API here, and report back:

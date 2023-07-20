@@ -5,6 +5,12 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
+  output   = "../prisma-client"
+}
+
+generator migrations {
+  provider = "prisma-field-encryption"
+  output   = "./data-migrations"
 }
 
 model Post {
